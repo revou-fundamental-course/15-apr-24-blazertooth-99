@@ -1,0 +1,65 @@
+main {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+.font{
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-tittle {
+    text-align: center;
+}
+
+.sub-tittle {
+    text-align: left;
+}
+
+.sub-tittle.font{
+
+}
+
+.main-section{
+    padding: 16px;
+    background-color: aliceblue;
+    border-radius: 4px;
+}
+.section-celcius {
+    padding-top: 16px;
+}
+.section-farenheit {
+    padding-top: 16px;
+}
+.section-result {
+    padding-top: 16px;
+}
+.section-explanation{
+    padding-top: 16px;
+}
+textarea{
+    width: 75%;
+    height: 32px;
+    resize: none;
+    border: 2px solid lavender;
+    border-radius: 4px;
+    color: coral;
+}
+.formula-s{
+    font-size: 20px;
+    font-style: italic;
+   
+}
+.formula-s>sub{
+    font-style: normal;
+}
+.normal-text{
+    font-style: normal;
+}
+
+.divCF{
+    display: block;
+}
+.divFC{
+    display: none;
+}
