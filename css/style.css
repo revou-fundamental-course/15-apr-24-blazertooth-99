@@ -1,11 +1,95 @@
-main {
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 64px;
-    padding-bottom: 64px;
+/* 
+Source Style W3School  
+Edited by Christian Satrio
+*/
+
+
+html {
+    height: 150%;
+    min-height: 80%;
+    margin: 0 auto;
 }
-.font{
- font-family: Arial, Helvetica, sans-serif;
+
+main {
+    position: absolute;
+    top: 80vh;
+    flex: 1;
+    margin: 0;
+    left: 50%;
+    width: 70%;
+    padding: 50px;
+    transform: translate(-50%, -50%);
+    background: #1a2930;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    position: absolute;
+    width: 100%;
+    font-family: Helvetica, sans-serif;
+    background: linear-gradient(#1a1f21, #292e30);
+}
+table, th, td {
+    border: transparent;
+    display: inline-block;
+}
+
+main .main-section {
+    position: relative;
+    background-color: #b7d0eec5;
+    padding: 16px;
+    border-radius: 20px;
+    border-top: 10 px;
+    border-style: double;
+    border-color: rgba(115, 215, 255, 0.726);
+    box-shadow: 5px 5px rgba(16, 61, 82, 0.6);
+}
+
+main .sub-section {
+    position: relative;
+    border-radius: 20px;
+    background-color: #5482b9c5;
+    padding: 10px;
+}
+
+main .input-box {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+    background: transparent;
+}
+
+main .input-box .textarea {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+main .h3-label {
+    color: black;
+}
+
+.main-tittle h1 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
 }
 
 .main-tittle {
@@ -16,28 +100,37 @@ main {
     text-align: left;
 }
 
-.sub-tittle.font{
-
+.p1 {
+    font-size: 20px;
+    font-weight: bolder;
+    color: #000;
 }
 
-.main-section{
-    padding: 16px;
-    background-color: aliceblue;
-    border-radius: 4px;
+.hr1 {
+    background-color: aquamarine;
 }
+
 .section-celcius {
     padding-top: 16px;
 }
+
 .section-farenheit {
     padding-top: 16px;
 }
+
 .section-result {
     padding-top: 16px;
 }
+
 .section-explanation{
     padding-top: 16px;
+    position: relative;
+    border-radius: 20px;
+    background-color: #355e91c5;
+    padding: 10px;
 }
-textarea{
+
+.textarea {
     width: 75%;
     height: 32px;
     resize: none;
@@ -45,21 +138,111 @@ textarea{
     border-radius: 4px;
     color: coral;
 }
-.formula-s{
+/* < -- Button convert hover -- >*/
+.btn-cvt:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+.btn-cvt {
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #1ec018;
+    border: 1px solid;
+    border-color: #1ec018;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    padding-left: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+.btn-cvt span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  .btn-cvt span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .btn-cvt:hover span {
+    padding-right: 15px;
+  }
+  
+  .btn-cvt:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+.btn-rst {
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: #066785;
+    color: #066785;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    padding-left: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.btn-swp {
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: #066785;
+    color: #066785;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    padding-left: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.formula-s {
     font-size: 20px;
     font-style: italic;
-   
 }
-.formula-s>sub{
-    font-style: normal;
-}
-.normal-text{
+
+.formula-s>sub {
     font-style: normal;
 }
 
-.divCF{
+.normal-text {
+    font-style: normal;
+}
+
+.divCF {
     display: block;
 }
-.divFC{
+.divFC {
     display: none;
+}
+
+.footer {   
+  width: 75%;
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  text-align: left;
+  color: rgb(194, 206, 206);
+  position: absolute;
+  height: 40px;
+  bottom: 10px;
+  margin-top: -500px;
+  background: transparent;
+  border-radius: 6px;
 }

@@ -1,134 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-
-</head>
-
-<body>
-    <main>
-        <header class="main-tittle">
+    <head>
+        <title>Mini Project</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+<!-- Main tag     -->
+<main>
+    <header class="main-tittle">
         <h1>Temperature Converter</h1>
-        </header>
-
-            <!-- Section introduction -->
+    </header>
+<body>
+<!-- Main Section  -->
+<div id="divCF" class="divCF">
     <section class="main-section" id="main-section">
-        <section class="section-sub">
-            <p>Masukan Suhu Derajat Celcius (°C)</p>
+        <!-- Sub Section -->
+        <section class="sub-section">
+            <p class="p1">Masukan Suhu Derajat Celcius (°C)</p>
         </section>
-        <!-- div CELCIUS to FAHRENHEIT -->
-    <div id="divCF" class="divCF">
+
+<!-- div CELCIUS to FAHRENHEIT -->
         <section class="section-celcius">
             <header>
-                <h3>Celcius(&deg; C)</h3>
+                <h3 class="h3-label">Celcius(&deg; C)</h3>
             </header>
-            <article id="inputField">
-                <textarea id="inputCelcius" rows="1" ></textarea>
+                <article id="inputField">
+                    <textarea class="input-box" id="inputCelcius" required onkeyup ="disabledInput()" maxlength="6" placeholder="Input temperature &deg;C here" rows="1"></textarea>
+                    <!-- Div button Celcius to Farenheit   -->
                     <div>
-                        <button id="result" onclick="cf()">Convert </button>
-                        <button id="reset">Reset</button>
-                        <button id="reverse" onclick="swap()">Reverse </button>
+                        <table>
+                            <th><button class="btn-cvt" id="result" style="vertical-align: middle;" onclick="cf()" disabled><span>Convert</span></button></th>
+                            <th><button class="btn-rst" id="reset" onclick="clearResult()">Reset</button></th>
+                            <th><button class="btn-swp" id="reverse" onclick="swap()">Reverse </button></th>
+                        </table>
                     </div>
-            </article>
+                </article>
         </section>
             <div id="error" style="display: flex; justify-content: center; margin-top: 15px;"></div>
-        
+        <!-- Section result conversion Celcius to farenheit -->
         <section class="section-farenheit">
             <header>
                 <h3 id="modeText2">Fahrenheit(&deg; F)</h3>
             </header>
-
-            <article>
-                <textarea readonly id="outputFahrenheit" rows="1"></textarea>
-            </article>
+                <article>
+                    <textarea readonly class="input-box" id="outputFahrenheit" rows="1" placeholder="Result (&deg;F)"></textarea>
+                </article>
         </section>
-
-    <section class="section-result">
-        <header>
-            <h3>Cara kalkulasi</h3>
-        </header>
-
-        <article>
-            <textarea readonly id="formulaC" rows="1" >(X °C × 9/5) + 32 = X °F</textarea>
-        </article>
-    </section>
-    <section class="section-explanation">
-        <header>
-            <h3 class="sub-tittle font">Cara konversi dari : (&deg;C) ke (&deg;F)</h3>
-        </header>
-            <hr/>
-        <article>
-            <p> Suhu <a class="formula-s">S</a> dalam derajat Fahrenheit (&deg;F) sama dengan suhu <a class="formula-s">S</a> dalam derajat Celcius (&deg;C) kali 9/5 tambah 32.</p>
-            <h1 class="formula-s">S<sub>(&deg;F) </sub> =(S<sub>(&deg;C) </sub><a class="normal-text">9/5 + 32) </a> </h1>
-            <p>atau</p>
-            <h1 class="formula-s">S<sub>(&deg;F) </sub> =(S<sub>(&deg;C) </sub><a class="normal-text">x 1.8 + 32)</a> </h1>
-
-        </article>
-    </section>
-</div>
+<!-- Section Cara kalkulasi -->
+        <section class="section-result">
+            <header>
+                <h3>Cara kalkulasi &deg;C to &deg;F</h3>
+            </header>
+                <article>
+                    <textarea readonly class="input-box" id="formulaC" rows="1" placeholder="(X °C × 9/5) + 32 = X °F"></textarea>
+                </article>
+        </section>
+        <!-- Section print Formula -->
+        <section class="section-explanation">
+            <header>
+                <h3 class="sub-tittle font">Cara konversi dari : (&deg;C) ke (&deg;F)</h3>
+            </header>
+                <hr class="hr1"/>
+                <article>
+                    <p> Suhu <a class="formula-s">S</a> dalam derajat Fahrenheit (&deg;F) sama dengan suhu <a class="formula-s">S</a> dalam derajat Celcius (&deg;C) kali 9/5 tambah 32.</p>
+                    <h1 class="formula-s">S<sub>(&deg;F) </sub> <a class="normal-text">=(</a> S<sub>(&deg;C) </sub><a class="normal-text">9/5 + 32 ) </a> </h1>
+                    <p>atau</p>
+                    <h1 class="formula-s">S<sub>(&deg;F) </sub> <a class="normal-text">=(</a> S<sub>(&deg;C) </sub><a class="normal-text">x 1.8 + 32 )</a> </h1>
+                </article>
+        </section>
+    </div>
+<!-- End Section Celcius to Farenheit -->
 
 <!-- div FAHRENHEIT to CELCIUS -->
-<br/>
-<div id="divFC" class="divFC">
-    <section class="section-fahrenheit">
-        <header>
-            <h3>Fahrenheit(&deg; F)</h3>
-        </header>
-        <article id="inputField">
-            <textarea id="inputFahrenheit" rows="1" ></textarea>
-                <div>
-                    <button id="result" onclick="fc()">Convert </button>
-                    <button id="resetF">Reset</button>
-                    <button id="reverse" onclick="swap()">Reverse </button>
-                </div>
-        </article>
+        <div id="divFC" class="divFC">
+            <section class="main-section" id="main-section">
+                <section class="sub-section">
+                    <p class="p1">Masukan Suhu Derajat Fahrenheit (&deg;F)</p>
+                </section>
+                <br/>
+            <section class="section-fahrenheit">
+                <header>
+                    <h3>Fahrenheit(&deg; F)</h3>
+                </header>
+            <article id="inputField">
+                <textarea class="input-box" id="inputFahrenheit" rows="1" onkeyup="disabledInputF()" maxlength="6" placeholder="Input temperature &deg;F here"></textarea>
+                    <!-- Div button Fahrenheit to Celcius -->
+                    <div>
+                        <button class="btn-cvt" id="resultF" style="vertical-align: middle;" onclick="fc()" disabled><span>Convert </span></button>
+                        <button class="btn-rst" id="resetF">Reset</button>
+                        <button class="btn-swp" id="reverse" onclick="swap()">Reverse </button>
+                    </div>
+            </article>
     </section>
-        <div id="error" style="display: flex; justify-content: center; margin-top: 15px;"></div>
-    
-    <section class="section-celcius">
+        <div id="error" style="display: flex; justify-content: center; margin-top: 15px;">
+        </div>
+            <!-- Section result conversion Fahrenheit to celcius -->
+            <section class="section-celcius">
+                <header>
+                    <h3 id="modeText2">Celcius(&deg; C)</h3>
+                </header>
+            <article>
+                <textarea readonly class="input-box" id="outputCelcius" rows="1" placeholder="Result (&deg;C)"></textarea>
+            </article>
+                </section>
+                    <!-- Section Cara kalkulasi -->
+                    <section class="section-result">
+                        <header>
+                            <h3>Cara kalkulasi &deg;F to &deg;C</h3>
+                        </header>
+
+            <article>
+                <textarea readonly class="input-box" id="formulaF" rows="1" class="formulaF" placeholder="(X &deg;F − 32) × 5/9 = X &deg;C"></textarea>
+            </article>
+        </section>
+    <!-- Section print formula Fahrenheit to celcius -->
+    <section class="section-explanation">
         <header>
-            <h3 id="modeText2">Celcius(&deg; C)</h3>
+            <h3 class="sub-tittle font">Cara konversi dari : (&deg;F) ke (&deg;C)</h3>
         </header>
-
-        <article>
-            <textarea readonly id="outputCelcius" rows="1"></textarea>
-        </article>
-    </section>
-
-<section class="section-result">
-    <header>
-        <h3>Cara kalkulasi</h3>
-    </header>
-
-    <article>
-        <textarea readonly id="formulaF" rows="1">(X &deg;F − 32) × 5/9 = X &deg;C
-        </textarea>
-    </article>
-</section>
-<section class="section-explanation">
-    <header>
-        <h3 class="sub-tittle font">Cara konversi dari : (&deg;F) ke (&deg;C)</h3>
-    </header>
         <hr/>
-    <article>
-        <p> Suhu <a class="formula-s">S</a> dalam derajat Celcius (&deg;C) sama dengan suhu <a class="formula-s">S</a> dalam derajat Fahrenheit (&deg;F) kurangi 32 kali 5/9.</p>
-        <h1 class="formula-s">S<sub>(&deg;C) </sub> =(S<sub>(&deg;F) </sub><a class="normal-text">- 32) × 5/9  </a> </h1>
-        
-    </article>
+        <article>
+            <p> Suhu <a class="formula-s">S</a> dalam derajat Celcius (&deg;C) sama dengan suhu <a class="formula-s">S</a> dalam derajat Fahrenheit (&deg;F) kurangi 32 kali 5/9.</p>
+            <h1 class="formula-s">S<sub>(&deg;C) </sub><a class="normal-text">=(</a> S<sub>(&deg;F) </sub><a class="normal-text">- 32 ) × 5/9  </a> </h1> 
+        </article>
+        </section>
+    </div>
 </section>
-
-</div>
-
-
-
-
-
-
-</section>
-        </main>
         <script src="/js/script.js"></script>
+    <div class="footer">
+        <footer>
+            <p>&copy; Copyright Mini Project By Christian Satrio. </p>
+        </footer>
+    </div>
+</main>
 </body>
 </html>
